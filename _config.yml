@@ -5,7 +5,7 @@ baseurl:
 url: https://jianzongX.github.io
 date_format: "ordinal"
 title: 码志
-subtitle: "公众号：没有"
+subtitle: "- 技术宅拯救世界-"
 description: "剑宗的个人博客"
 keywords: 剑宗
 timezone: Asia/Chengdu
@@ -40,7 +40,7 @@ components:
     # 修改图片请替换 assets/images/qrcode.jpg
     qrcode:
         enabled: true
-        image_alt: 闷骚的程序员
+        image_alt: 剑宗
     # 维基索引页使用哪种视图，支持 列表（list）/分类（cate）
     wiki:
         view: cate
@@ -57,12 +57,12 @@ highlight_theme: github
 # ---------------- #
 #      Author      #
 # ---------------- #
-author: Zhuang Ma
+author: jianzongX
 organization: 
 organization_url: 
-github_username: mzlogin
-location: Wuhan, China
-email: chumpma@gmail.com
+github_username: jingzongX
+location: chengdu, China
+email: 18180960907@163.com
 
 # ---------------- #
 #    Navigation    #
