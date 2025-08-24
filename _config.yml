@@ -170,16 +170,16 @@ gitalk:
     clientSecret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
 # utterances 配置参考：https://utteranc.es/
 utterances:
-    repo: mzlogin/blog-comments
+    repo: jianzongX/jianzongX.github.io
 # beaudar 配置参考：https://beaudar.lipk.org/
 beaudar:
-    repo: mzlogin/blog-comments
+    repo: jianzongX/jianzongX.github.io
 # giscus 配置参考：https://giscus.app/zh-CN
 giscus:
-    repo: mzlogin/blog-comments
-    repo-id: MDEwOlJlcG9zaXRvcnk5MzEyNzkxNw==
+    repo: jianzongX/jianzongX.github.io
+    repo-id: R_kgDOPi7tog
     category: Announcements
-    category-id: DIC_kwDOBY0E7c4CRtg9
+    category-id: DIC_kwDOPi7tos4Cuhrp
 # 在使用其它评论组件时可点击显示 Disqus
 lazy_load_disqus : false
 
