@@ -81,10 +81,6 @@ navs:
     label: 归档
     mobile-hidden: true
     
- - label:  fagdongxi
-    href: https://fagedongxi.com/
-    target: _blank  # 可选，设置为_blank表示新窗口打开
-    
   -
     href: /open-source/
     label: 开源
