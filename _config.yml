@@ -60,7 +60,7 @@ highlight_theme: github
 author: jianzongX
 organization: 
 organization_url: 
-github_username: jingzongX
+github_username: jianzongX
 location: chengdu, China
 email: 18180960907@163.com
 
@@ -164,7 +164,7 @@ gitment:
         client_secret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
 # gitalk 配置参考：https://github.com/gitalk/gitalk#install
 gitalk:
-    owner: mzlogin
+    owner: jianzongX
     repo: blog-comments
     clientID: d2e1cbbd298958076462
     clientSecret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
