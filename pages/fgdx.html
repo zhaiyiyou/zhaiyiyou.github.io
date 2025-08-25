@@ -1,0 +1,118 @@
+---
+layout: page
+title: 发个东西
+description: 发个东西
+keywords: 发个东西
+comments: false
+menu: 发个东西
+permalink: /fgdx/
+---
+
+<div class="external-site-container">
+  
+  <!-- 加载状态提示 -->
+  <div class="iframe-loading" id="iframeLoading">
+    <div class="spinner"></div>
+    <p>加载中，请稍候...</p>
+  </div>
+  
+  <!-- 外部网站嵌入 -->
+  <iframe src="https://fagedongxi.com" 
+          class="external-iframe"
+          title="fagedongxi.com" 
+          frameborder="0" 
+          scrolling="auto"
+          onload="document.getElementById('iframeLoading').style.display='none'">
+  </iframe>
+  
+  <div class="iframe-note">
+    <p><small></small></p>
+  </div>
+</div>
+
+<style>
+/* 外部站点容器样式，保持与其他页面一致 */
+.external-site-container {
+  margin: 20px 0;
+  padding: 20px;
+  background: #fff;
+  border-radius: 3px;
+  border: 1px solid #efefef;
+}
+
+/* 嵌入框架样式 */
+.external-iframe {
+  width: 100%;
+  min-height: 800px;
+  margin-top: 15px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  display: none;
+}
+
+/* 加载状态样式 */
+.iframe-loading {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 15px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #4183c4;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 提示信息样式 */
+.iframe-note {
+  margin-top: 15px;
+  color: #666;
+  font-size: 0.9em;
+}
+
+/* 响应式调整 */
+@media (max-width: 50em) {
+  .external-iframe {
+    min-height: 600px;
+  }
+  
+  .external-site-container {
+    padding: 15px;
+    margin: 10px 0;
+  }
+}
+</style>
+
+<script>
+// 处理iframe加载完成后的显示逻辑
+document.addEventListener('DOMContentLoaded', function() {
+  var iframe = document.querySelector('.external-iframe');
+  var loading = document.getElementById('iframeLoading');
+  
+  // 加载超时处理
+  var timeout = setTimeout(function() {
+    loading.innerHTML = '<p>加载超时，请刷新页面重试</p>';
+  }, 15000);
+  
+  iframe.onload = function() {
+    clearTimeout(timeout);
+    loading.style.display = 'none';
+    iframe.style.display = 'block';
+  };
+  
+  // 显示iframe（隐藏加载状态时）
+  if (iframe.contentDocument.readyState === 'complete') {
+    clearTimeout(timeout);
+    loading.style.display = 'none';
+    iframe.style.display = 'block';
+  }
+});
+</script>
