@@ -3,7 +3,7 @@ layout: default
 title: 发个东西
 keywords: 发个东西
 description: 局域网聊天室。
-permalink: /fagedongxi/
+permalink: /fgdx/
 ---
 
 <div class="external-site-container">
