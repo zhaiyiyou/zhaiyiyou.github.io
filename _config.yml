@@ -80,7 +80,9 @@ navs:
     href: /archives/
     label: 归档
     mobile-hidden: true
-
+ -
+    href: /fgdx/
+    label: 发个东西
   -
     href: /open-source/
     label: 开源
