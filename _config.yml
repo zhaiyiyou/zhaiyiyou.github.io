@@ -76,13 +76,9 @@ navs:
     href: /downloads/
     label: 下载
     mobile-hidden: true
-    
-  -
-    href: /open-source/
-    label: 开源
-    mobile-hidden: true
-    
-  - label: 发个东西
+
+  -  
+    label: 发个东西
     href: /fgdx/
     target: _self
     
