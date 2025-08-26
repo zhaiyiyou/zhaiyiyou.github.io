@@ -12,15 +12,15 @@ permalink: /downloads/
   max-width: 1400px;
   margin: 0 auto;
   padding: 30px;
-  display: flex; /* 启用Flex布局 */
-  gap: 20px; /* 两个区块之间的间距 */
-  flex-wrap: wrap; /* 响应式换行 */
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .download-section {
-  flex: 1; /* 平分容器宽度 */
-  min-width: 300px; /* 最小宽度，避免过窄 */
-  margin-bottom: 50px;
+  flex: 1;
+  min-width: 300px;
+  margin-bottom: 30px;
   padding: 20px;
   background-color: #f9f9f9;
   border-radius: 8px;
@@ -36,12 +36,22 @@ permalink: /downloads/
   border-bottom: 1px solid #eee;
 }
 
-.download-iframe {
+/* 等比缩小设置 */
+.download-wrapper {
+  position: relative;
   width: 100%;
-  height: 80vh;
-  min-height: 600px;
-  border: 1px solid #ddd;
+  padding-top: 75%; /* 4:3 比例 (高度=宽度×0.75) */
+  overflow: hidden;
   border-radius: 6px;
+}
+
+.download-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ddd;
   transition: border-color 0.3s;
 }
 
@@ -55,9 +65,8 @@ permalink: /downloads/
     padding: 15px;
   }
   
-  .download-iframe {
-    height: 70vh;
-    min-height: 500px;
+  .download-wrapper {
+    padding-top: 100%; /* 移动端使用1:1比例 */
   }
 }
 </style>
@@ -65,21 +74,25 @@ permalink: /downloads/
 <div class="download-container">
   <div class="download-section">
     <h3>不虚系列下载(密码1234)</h3>
-    <iframe src="https://wwpb.lanzouw.com/b00ya22x0d" 
-            class="download-iframe"
-            title="不虚系列下载" 
-            frameborder="0" 
-            scrolling="auto">
-    </iframe>
+    <div class="download-wrapper">
+      <iframe src="https://wwpb.lanzouw.com/b00ya22x0d" 
+              class="download-iframe"
+              title="不虚系列下载" 
+              frameborder="0" 
+              scrolling="auto">
+      </iframe>
+    </div>
   </div>
 
   <div class="download-section">
     <h3>信息课工具箱下载(密码1234)</h3>
-    <iframe src="https://wwpb.lanzouw.com/b00ya6vgod" 
-            class="download-iframe"
-            title="信息课工具箱下载" 
-            frameborder="0" 
-            scrolling="auto">
-    </iframe>
+    <div class="download-wrapper">
+      <iframe src="https://wwpb.lanzouw.com/b00ya6vgod" 
+              class="download-iframe"
+              title="信息课工具箱下载" 
+              frameborder="0" 
+              scrolling="auto">
+      </iframe>
+    </div>
   </div>
 </div>
