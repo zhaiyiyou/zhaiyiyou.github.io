@@ -8,17 +8,25 @@ permalink: /downloads/
 
 <style>
 .download-container {
-  width: 75%; /* 原宽度减少四分之一 */
-  max-width: 1050px; /* 按比例减少最大宽度 */
+  width: 100%;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 30px;
   display: flex;
-  flex-direction: column; /* 改为纵向排列 */
-  gap: 30px; /* 增加垂直间距 */
+  gap: 20px;
+  /* 移除换行，确保一行一个子窗口 */
+  flex-wrap: nowrap;
+  /* 允许横向滚动（避免窗口过窄时挤压） */
+  overflow-x: auto;
+  /* 横向滚动条样式优化（可选） */
+  scrollbar-width: thin;
 }
 
 .download-section {
-  width: 100%; /* 占满容器宽度 */
+  /* 宽度改为网页宽度的90%，且不自动收缩 */
+  width: 90%;
+  flex: 0 0 auto;
+  margin-bottom: 30px;
   padding: 20px;
   background-color: #f9f9f9;
   border-radius: 8px;
@@ -48,37 +56,45 @@ permalink: /downloads/
 }
 
 .download-iframe {
-  width: 100%;
-  min-height: 480px;
-  max-height: 600px;
-  height: 60vh;
+  width: 100%; /* 子窗口宽度继承父容器（90%网页宽） */
+  /* 高度改为原来的75%：原基础高度480px×0.75=360px，原最大高度600px×0.75=450px，原视口高度60vh×0.75=45vh */
+  min-height: 360px; 
+  max-height: 450px; 
+  height: 45vh; 
   border: none;
   overflow: auto;
 }
 
-/* 响应式调整 */
+/* 响应式调整（同步按75%比例缩减高度） */
 @media (max-width: 1024px) {
   .download-iframe {
-    height: 55vh;
+    height: 41.25vh; /* 原55vh×0.75 */
   }
 }
 
 @media (max-width: 768px) {
   .download-container {
-    width: 90%; /* 在小屏幕上略微放宽宽度 */
     padding: 15px;
+    /* 窄屏时恢复纵向排列，提升移动端体验 */
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+  
+  .download-section {
+    /* 窄屏时子窗口宽度占满容器（避免过窄） */
+    width: 100%;
   }
   
   .download-iframe {
-    height: 70vh;
-    min-height: 500px;
+    height: 52.5vh; /* 原70vh×0.75 */
+    min-height: 375px; /* 原500px×0.75 */
   }
 }
 
 @media (max-width: 480px) {
   .download-iframe {
-    height: 65vh;
-    min-height: 450px;
+    height: 48.75vh; /* 原65vh×0.75 */
+    min-height: 337.5px; /* 原450px×0.75 */
   }
 }
 </style>
