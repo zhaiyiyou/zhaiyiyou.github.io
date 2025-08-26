@@ -8,19 +8,17 @@ permalink: /downloads/
 
 <style>
 .download-container {
-  width: 100%;
-  max-width: 1400px;
+  width: 75%; /* 原宽度减少四分之一 */
+  max-width: 1050px; /* 按比例减少最大宽度 */
   margin: 0 auto;
   padding: 30px;
   display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+  flex-direction: column; /* 改为纵向排列 */
+  gap: 30px; /* 增加垂直间距 */
 }
 
 .download-section {
-  flex: 1;
-  min-width: 300px;
-  margin-bottom: 30px;
+  width: 100%; /* 占满容器宽度 */
   padding: 20px;
   background-color: #f9f9f9;
   border-radius: 8px;
@@ -50,12 +48,12 @@ permalink: /downloads/
 }
 
 .download-iframe {
-  width: 100%; /* 使用正常宽度比例 */
-  min-height: 480px; /* 基础高度 */
-  max-height: 600px; /* 最大高度限制 */
-  height: 60vh; /* 相对视口高度 */
+  width: 100%;
+  min-height: 480px;
+  max-height: 600px;
+  height: 60vh;
   border: none;
-  overflow: auto; /* 必要时显示滚动条 */
+  overflow: auto;
 }
 
 /* 响应式调整 */
@@ -67,8 +65,8 @@ permalink: /downloads/
 
 @media (max-width: 768px) {
   .download-container {
+    width: 90%; /* 在小屏幕上略微放宽宽度 */
     padding: 15px;
-    flex-direction: column;
   }
   
   .download-iframe {
