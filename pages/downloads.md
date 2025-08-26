@@ -13,20 +13,13 @@ permalink: /downloads/
   margin: 0 auto;
   padding: 30px;
   display: flex;
-  gap: 20px;
-  /* 移除换行，确保一行一个子窗口 */
-  flex-wrap: nowrap;
-  /* 允许横向滚动（避免窗口过窄时挤压） */
-  overflow-x: auto;
-  /* 横向滚动条样式优化（可选） */
-  scrollbar-width: thin;
+  flex-direction: column; /* 垂直排列，确保一行一个子窗口 */
+  gap: 30px; /* 子窗口之间的垂直间距 */
 }
 
 .download-section {
-  /* 宽度改为网页宽度的90%，且不自动收缩 */
-  width: 90%;
-  flex: 0 0 auto;
-  margin-bottom: 30px;
+  width: 90%; /* 宽度占网页宽度的90% */
+  margin: 0 auto; /* 水平居中 */
   padding: 20px;
   background-color: #f9f9f9;
   border-radius: 8px;
@@ -56,45 +49,41 @@ permalink: /downloads/
 }
 
 .download-iframe {
-  width: 100%; /* 子窗口宽度继承父容器（90%网页宽） */
-  /* 高度改为原来的75%：原基础高度480px×0.75=360px，原最大高度600px×0.75=450px，原视口高度60vh×0.75=45vh */
-  min-height: 360px; 
-  max-height: 450px; 
-  height: 45vh; 
+  width: 100%;
+  /* 高度改为原来的75% */
+  min-height: 360px; /* 原480px × 0.75 */
+  max-height: 450px; /* 原600px × 0.75 */
+  height: 45vh; /* 原60vh × 0.75 */
   border: none;
   overflow: auto;
 }
 
-/* 响应式调整（同步按75%比例缩减高度） */
+/* 响应式调整 */
 @media (max-width: 1024px) {
   .download-iframe {
-    height: 41.25vh; /* 原55vh×0.75 */
+    height: 41.25vh; /* 原55vh × 0.75 */
   }
 }
 
 @media (max-width: 768px) {
   .download-container {
     padding: 15px;
-    /* 窄屏时恢复纵向排列，提升移动端体验 */
-    flex-direction: column;
-    overflow-x: hidden;
   }
   
   .download-section {
-    /* 窄屏时子窗口宽度占满容器（避免过窄） */
-    width: 100%;
+    width: 95%; /* 移动端宽度稍宽 */
   }
   
   .download-iframe {
-    height: 52.5vh; /* 原70vh×0.75 */
-    min-height: 375px; /* 原500px×0.75 */
+    height: 52.5vh; /* 原70vh × 0.75 */
+    min-height: 375px; /* 原500px × 0.75 */
   }
 }
 
 @media (max-width: 480px) {
   .download-iframe {
-    height: 48.75vh; /* 原65vh×0.75 */
-    min-height: 337.5px; /* 原450px×0.75 */
+    height: 48.75vh; /* 原65vh × 0.75 */
+    min-height: 338px; /* 原450px × 0.75，四舍五入 */
   }
 }
 </style>
