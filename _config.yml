@@ -73,15 +73,6 @@ navs:
     label: 首页
 
   -
-    href: /categories/
-    label: 分类
-
-  -
-    href: /archives/
-    label: 归档
-    mobile-hidden: true
-
-  -
     href: /downloads/
     label: 下载
     mobile-hidden: true
