@@ -9,39 +9,44 @@ permalink: /downloads/
 <style>
 .download-container {
   width: 100%;
-  max-width: 1400px; /* 扩大最大宽度 */
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 30px; /* 增加内边距 */
+  padding: 30px;
+  display: flex; /* 启用Flex布局 */
+  gap: 20px; /* 两个区块之间的间距 */
+  flex-wrap: wrap; /* 响应式换行 */
 }
 
 .download-section {
-  margin-bottom: 50px; /* 增加区块间距 */
+  flex: 1; /* 平分容器宽度 */
+  min-width: 300px; /* 最小宽度，避免过窄 */
+  margin-bottom: 50px;
   padding: 20px;
-  background-color: #f9f9f9; /* 增加背景色区分区块 */
-  border-radius: 8px; /* 优化圆角 */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* 增加轻微阴影 */
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .download-section h3 {
   margin-top: 0;
-  margin-bottom: 20px; /* 增加标题与内容间距 */
-  font-size: 1.5rem; /* 放大标题 */
+  margin-bottom: 20px;
+  font-size: 1.5rem;
   color: #333;
   padding-bottom: 10px;
-  border-bottom: 1px solid #eee; /* 增加标题下划线 */
+  border-bottom: 1px solid #eee;
 }
 
 .download-iframe {
   width: 100%;
-  height: 80vh; /* 提高高度占比 */
-  min-height: 600px; /* 提高最小高度 */
+  height: 80vh;
+  min-height: 600px;
   border: 1px solid #ddd;
   border-radius: 6px;
-  transition: border-color 0.3s; /* 增加过渡效果 */
+  transition: border-color 0.3s;
 }
 
 .download-iframe:hover {
-  border-color: #999; /* 鼠标悬停时加深边框 */
+  border-color: #999;
 }
 
 /* 响应式调整 */
