@@ -36,45 +36,32 @@ permalink: /downloads/
   border-bottom: 1px solid #eee;
 }
 
-/* 缩放容器设置 */
 .download-wrapper {
   width: 100%;
-  overflow: hidden;
   border-radius: 6px;
-  /* 为缩放留出空间 */
-  padding: 10px;
-  box-sizing: border-box;
-}
-
-.scaled-iframe-container {
-  width: 100%;
-  /* 控制缩放后的显示区域 */
   overflow: hidden;
   border: 1px solid #ddd;
-  border-radius: 6px;
-}
-
-.download-iframe {
-  width: 140%; /* 原始宽度比显示区域宽 */
-  height: 140%; /* 原始高度比显示区域高 */
-  border: none;
-  /* 缩小比例（70%），保持内容完整 */
-  transform: scale(0.7);
-  transform-origin: top left; /* 从左上角开始缩放 */
   transition: all 0.3s ease;
 }
 
-.scaled-iframe-container:hover {
+.download-wrapper:hover {
   border-color: #999;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* 响应式调整缩放比例 */
+.download-iframe {
+  width: 100%; /* 使用正常宽度比例 */
+  min-height: 480px; /* 基础高度 */
+  max-height: 600px; /* 最大高度限制 */
+  height: 60vh; /* 相对视口高度 */
+  border: none;
+  overflow: auto; /* 必要时显示滚动条 */
+}
+
+/* 响应式调整 */
 @media (max-width: 1024px) {
   .download-iframe {
-    width: 130%;
-    height: 130%;
-    transform: scale(0.77);
+    height: 55vh;
   }
 }
 
@@ -85,17 +72,15 @@ permalink: /downloads/
   }
   
   .download-iframe {
-    width: 120%;
-    height: 120%;
-    transform: scale(0.83);
+    height: 70vh;
+    min-height: 500px;
   }
 }
 
 @media (max-width: 480px) {
   .download-iframe {
-    width: 110%;
-    height: 110%;
-    transform: scale(0.91);
+    height: 65vh;
+    min-height: 450px;
   }
 }
 </style>
@@ -104,28 +89,22 @@ permalink: /downloads/
   <div class="download-section">
     <h3>不虚系列下载(密码1234)</h3>
     <div class="download-wrapper">
-      <div class="scaled-iframe-container">
-        <iframe src="https://wwpb.lanzouw.com/b00ya22x0d" 
-                class="download-iframe"
-                title="不虚系列下载" 
-                frameborder="0" 
-                scrolling="no"> <!-- 禁用滚动，内容已缩放完整显示 -->
-        </iframe>
-      </div>
+      <iframe src="https://wwpb.lanzouw.com/b00ya22x0d" 
+              class="download-iframe"
+              title="不虚系列下载" 
+              frameborder="0">
+      </iframe>
     </div>
   </div>
 
   <div class="download-section">
     <h3>信息课工具箱下载(密码1234)</h3>
     <div class="download-wrapper">
-      <div class="scaled-iframe-container">
-        <iframe src="https://wwpb.lanzouw.com/b00ya6vgod" 
-                class="download-iframe"
-                title="信息课工具箱下载" 
-                frameborder="0" 
-                scrolling="no"> <!-- 禁用滚动，内容已缩放完整显示 -->
-        </iframe>
-      </div>
+      <iframe src="https://wwpb.lanzouw.com/b00ya6vgod" 
+              class="download-iframe"
+              title="信息课工具箱下载" 
+              frameborder="0">
+      </iframe>
     </div>
   </div>
 </div>
