@@ -1,4 +1,3 @@
----
 layout: default
 title: 下载
 keywords: 下载, 不虚系列, 信息课工具箱
@@ -7,12 +6,6 @@ permalink: /downloads/
 ---
 
 <style>
-/* 禁止页面水平滚动 */
-html, body {
-  overflow-x: hidden; /* 隐藏水平滚动条 */
-  width: 100%; /* 确保宽度不超出视口 */
-}
-
 .download-container {
   width: 100%;
   max-width: 1400px;
@@ -48,6 +41,9 @@ html, body {
   overflow: hidden;
   border: 1px solid #ddd;
   transition: all 0.3s ease;
+  /* 新增：给 iframe 父容器加定位，配合 iframe 缩放 */
+  position: relative;
+  height: 60vh; /* 与 iframe 高度保持一致，避免缩放错位 */
 }
 
 .download-wrapper:hover {
@@ -56,18 +52,26 @@ html, body {
 }
 
 .download-iframe {
-  width: 100%; /* 使用正常宽度比例 */
-  min-height: 480px; /* 基础高度 */
-  max-height: 600px; /* 最大高度限制 */
-  height: 60vh; /* 相对视口高度 */
+  width: 100%; 
+  min-height: 480px; 
+  max-height: 600px; 
+  height: 60vh; 
   border: none;
-  overflow: auto; /* 必要时显示滚动条 */
+  overflow: auto; 
+  /* 关键修改：强制内容缩放适配子窗口 */
+  transform-origin: top left; /* 从左上角开始缩放 */
+  width: 120%; /* 先放大内容宽度（根据实际溢出情况调整，如110%/120%） */
+  transform: scale(0.83); /* 再整体缩小（1/1.2≈0.83，与width成反比） */
+  height: 120%; /* 高度同步放大，保证缩放后内容完整 */
 }
 
-/* 响应式调整 */
+/* 响应式调整：不同屏幕适配不同缩放比例 */
 @media (max-width: 1024px) {
+  .download-wrapper { height: 55vh; }
   .download-iframe {
     height: 55vh;
+    width: 115%;
+    transform: scale(0.87); /* 1/1.15≈0.87 */
   }
 }
 
@@ -76,16 +80,21 @@ html, body {
     padding: 15px;
     flex-direction: column;
   }
-  
+  .download-wrapper { height: 70vh; }
   .download-iframe {
     height: 70vh;
+    width: 110%;
+    transform: scale(0.91); /* 1/1.1≈0.91 */
     min-height: 500px;
   }
 }
 
 @media (max-width: 480px) {
+  .download-wrapper { height: 65vh; }
   .download-iframe {
     height: 65vh;
+    width: 105%;
+    transform: scale(0.95); /* 1/1.05≈0.95 */
     min-height: 450px;
   }
 }
