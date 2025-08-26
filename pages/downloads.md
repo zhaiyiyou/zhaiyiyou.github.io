@@ -7,6 +7,12 @@ permalink: /downloads/
 ---
 
 <style>
+/* 禁止页面水平滚动 */
+html, body {
+  overflow-x: hidden; /* 隐藏水平滚动条 */
+  width: 100%; /* 确保宽度不超出视口 */
+}
+
 .download-container {
   width: 100%;
   max-width: 1400px;
