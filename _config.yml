@@ -80,6 +80,11 @@ navs:
     href: /archives/
     label: 归档
     mobile-hidden: true
+
+  -
+    href: /downloads/
+    label: 下载
+    mobile-hidden: true
     
   -
     href: /open-source/
