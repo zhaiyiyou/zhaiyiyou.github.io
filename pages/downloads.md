@@ -92,7 +92,7 @@ permalink: /downloads/
   <div class="download-section">
     <h3>不虚系列下载(密码1234)</h3>
     <div class="download-wrapper">
-      <iframe src="https://wwpb.lanzouw.com/b00ya22x0d" 
+      <iframe src="https://lanzouw.com/b00ya22x0d" 
               class="download-iframe"
               title="不虚系列下载" 
               frameborder="0">
@@ -103,7 +103,7 @@ permalink: /downloads/
   <div class="download-section">
     <h3>信息课工具箱下载(密码1234)</h3>
     <div class="download-wrapper">
-      <iframe src="https://wwpb.lanzouw.com/b00ya6vgod" 
+      <iframe src="https://lanzouw.com/b00ya6vgod" 
               class="download-iframe"
               title="信息课工具箱下载" 
               frameborder="0">
