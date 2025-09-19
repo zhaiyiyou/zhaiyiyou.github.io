@@ -743,3 +743,105 @@ img + em {
 @media (max-width: 400px) { .content-header-ad { display: none; } }
 @media (min-width:500px) { .content-header-ad { width: 468px; height: 60px; } }
 @media (min-width:800px) { .content-header-ad { width: 728px; height: 90px; } }
+
+/* 亚克力透明深色主题核心样式 */
+:root {
+  --acrylic-bg: rgba(30, 30, 30, 0.7);
+  --acrylic-border: rgba(255, 255, 255, 0.1);
+  --acrylic-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --text-primary: #f0f0f0;
+  --text-secondary: #bbbbbb;
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+}
+
+/* 全局深色模式基础 */
+body {
+  background-color: var(--bg-primary);
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(50, 50, 50, 0.1) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(80, 80, 80, 0.1) 0%, transparent 20%);
+  color: var(--text-primary);
+}
+
+/* 亚克力效果应用到主要容器 */
+.site-header, 
+.site-footer, 
+.collection-head, 
+.markdown-body,
+.card .thumbnail,
+.posts-list-item,
+.download-section,
+.download-wrapper,
+.external-site-container {
+  background: var(--acrylic-bg);
+  border: 1px solid var(--acrylic-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--acrylic-shadow);
+}
+
+/* 链接和文本颜色调整 */
+a {
+  color: #bbdefb;
+}
+
+a:hover {
+  color: #e3f2fd;
+}
+
+.site-header h1 a,
+.site-header-nav-item {
+  color: var(--text-secondary);
+}
+
+.site-header-nav-item:hover,
+.site-header-nav-item.selected {
+  color: var(--text-primary);
+}
+
+.markdown-body h1, 
+.markdown-body h2, 
+.markdown-body h3, 
+.markdown-body h4, 
+.markdown-body h5, 
+.markdown-body h6 {
+  color: var(--text-primary);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.markdown-body code, 
+.markdown-body pre {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #e0e0e0;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 卡片和列表项样式调整 */
+.posts-list-item {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.card .thumbnail:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+}
+
+/* 工具按钮调整 */
+.tools-wrapper a {
+  background: rgba(30, 30, 30, 0.8);
+  color: var(--text-secondary);
+  border: 1px solid var(--acrylic-border);
+}
+
+.tools-wrapper a:hover {
+  color: var(--text-primary);
+  background: rgba(40, 40, 40, 0.9);
+}
+
+/* 响应式调整 */
+@media (max-width: 50em) {
+  .home .collapsed .icon-bar {
+    background-color: var(--text-primary);
+  }
+}
