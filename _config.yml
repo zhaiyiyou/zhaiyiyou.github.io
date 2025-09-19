@@ -2,18 +2,18 @@
 #   Main Configs   #
 # ---------------- #
 baseurl:
-url: https://jianzongX.github.io
+url: https://zhaiyiyou.github.io
 date_format: "ordinal"
-title: 码志
-subtitle: "- 尊严只在剑锋之上-"
-description: "剑宗的个人博客"
-keywords: 剑宗
+title: 我的个人网页
+subtitle: "小黑可爱捏🙃"
+description: "zhaiyiyou的个人博客"
+keywords: zhaiyiyou
 timezone: Asia/Chengdu
 encoding: "utf-8"
 # 页面左下角显示的年份
 since: 2025
 # 源码仓库，请替换成自己的
-repository: jianzongX/jianzongX.github.io
+repository: jzhaiyiyou/zhaiyiyougithub.io
 # 对 css 和 js 资源的 cdn 加速配置
 cdn:
     jsdelivr:
@@ -23,7 +23,7 @@ components:
     # 分享
     # weibo,qq,wechat,douban,qzone,linkedin,facebook,twitter
     share:
-        enabled: false
+        enabled: true
         hide-platforms: qq,facebook
     # 不蒜子访问统计
     busuanzi:
@@ -31,7 +31,7 @@ components:
         start_date: 2020-05-03
     # My Popular Repositories
     side_bar_repo:
-        enabled: true
+        enabled: false
         limit: 5
     # 文章字数统计
     word_count:
@@ -57,12 +57,12 @@ highlight_theme: github
 # ---------------- #
 #      Author      #
 # ---------------- #
-author: jianzongX
-organization: 
-organization_url: 
-github_username: jianzongX
+author: zhaiyiyou
+organization: 我还只是个学生呢
+organization_url: 怎么可能会有呢~
+github_username: zhaiyiyou
 location: chengdu, China
-email: 18180960907@163.com
+email: zyy5303001gy@outlook.com
 
 # ---------------- #
 #    Navigation    #
@@ -160,19 +160,19 @@ gitment:
         client_secret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
 # gitalk 配置参考：https://github.com/gitalk/gitalk#install
 gitalk:
-    owner: jianzongX
+    owner: zhaiyiyou
     repo: blog-comments
     clientID: d2e1cbbd298958076462
     clientSecret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
 # utterances 配置参考：https://utteranc.es/
 utterances:
-    repo: jianzongX/jianzongX.github.io
+    repo: zhaiyiyou/zhaiyiyou.github.io
 # beaudar 配置参考：https://beaudar.lipk.org/
 beaudar:
-    repo: jianzongX/jianzongX.github.io
+    repo: zhaiyiyou/zhaiyiyou.github.io
 # giscus 配置参考：https://giscus.app/zh-CN
 giscus:
-    repo: jianzongX/jianzongX.github.io
+    repo: zhaiyiyou/zhaiyiyou.github.io
     repo-id: R_kgDOPi7tog
     category: Announcements
     category-id: DIC_kwDOPi7tos4Cuhrp
