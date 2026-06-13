@@ -38,18 +38,6 @@ const weatherData = reactive({
   },
 });
 
-// 取出天气平均值
-const getTemperature = (min, max) => {
-  try {
-    // 计算平均值并四舍五入
-    const average = (Number(min) + Number(max)) / 2;
-    return Math.round(average);
-  } catch (error) {
-    console.error("计算温度出现错误：", error);
-    return "NaN";
-  }
-};
-
 // 获取天气数据
 const getWeatherData = async () => {
   try {
@@ -58,16 +46,16 @@ const getWeatherData = async () => {
       console.log("未配置，使用备用天气接口");
       const result = await getOtherWeather();
       console.log(result);
-      const data = result.result;
+      const current = result.current_condition[0];
+      const area = result.nearest_area[0];
       weatherData.adCode = {
-        city: data.city.City || "未知地区",
-        // adcode: data.city.cityId,
+        city: area.areaName[0].value,
       };
       weatherData.weather = {
-        weather: data.condition.day_weather,
-        temperature: getTemperature(data.condition.min_degree, data.condition.max_degree),
-        winddirection: data.condition.day_wind_direction,
-        windpower: data.condition.day_wind_power,
+        weather: current.lang_zh?.[0]?.value || current.weatherDesc[0].value,
+        temperature: current.temp_C,
+        winddirection: compassToChinese(current.winddir16Point),
+        windpower: kmhToBeaufort(current.windspeedKmph),
       };
     } else {
       // 获取 Adcode
@@ -93,6 +81,47 @@ const getWeatherData = async () => {
     console.error("天气信息获取失败:" + error);
     onError("天气信息获取失败");
   }
+};
+
+// 罗盘风向转中文
+const compassToChinese = (dir) => {
+  const map = {
+    N: "北",
+    NNE: "东北偏北",
+    NE: "东北",
+    ENE: "东北偏东",
+    E: "东",
+    ESE: "东南偏东",
+    SE: "东南",
+    SSE: "东南偏南",
+    S: "南",
+    SSW: "西南偏南",
+    SW: "西南",
+    WSW: "西南偏西",
+    W: "西",
+    WNW: "西北偏西",
+    NW: "西北",
+    NNW: "西北偏北",
+  };
+  return map[dir] || dir;
+};
+
+// 风速(km/h) 转 风力等级
+const kmhToBeaufort = (kmh) => {
+  const speed = Number(kmh);
+  if (speed < 1) return 0;
+  if (speed <= 5) return 1;
+  if (speed <= 11) return 2;
+  if (speed <= 19) return 3;
+  if (speed <= 28) return 4;
+  if (speed <= 38) return 5;
+  if (speed <= 49) return 6;
+  if (speed <= 61) return 7;
+  if (speed <= 74) return 8;
+  if (speed <= 88) return 9;
+  if (speed <= 102) return 10;
+  if (speed <= 117) return 11;
+  return 12;
 };
 
 // 报错信息
