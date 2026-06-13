@@ -1,12 +1,15 @@
-# Dev 分支推送部署预览
-## 仅部署 Win 端
-name: Build Dev
+# Dev 分支推送部署
+name: Build and Deploy
 
 on:
   push:
     branches:
       - dev
       - master
+
+# 设置 GITHUB_TOKEN 权限
+permissions:
+  contents: write
 
 jobs:
   release:
@@ -17,30 +20,34 @@ jobs:
       # 检出 Git 仓库
       - name: Check out git repository
         uses: actions/checkout@v4.1.1
+
       # 安装 Node.js
       - name: Install Node.js
         uses: actions/setup-node@v4.0.0
         with:
           node-version: "18.x"
+
       # 复制环境变量文件
-      - name: Copy .env.example
+      - name: Copy .env
         run: |
           if (-not (Test-Path .env)) {
             Copy-Item .env.example .env
           } else {
             Write-Host ".env file already exists. Skipping the copy step."
           }
+
       # 安装项目依赖
       - name: Install Dependencies
         run: npm install
+
       # 构建程序
       - name: Build Website
         run: npm run build
-        env:
-          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-      # 上传构建产物
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v4
+
+      # 部署到 GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          name: Home
-          path: dist
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
